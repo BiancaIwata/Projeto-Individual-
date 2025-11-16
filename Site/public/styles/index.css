@@ -37,7 +37,7 @@ h3 {
 }
 
 button {
-    font-weight: normal;
+    font-size: 16px;
     color: white;
     background-color: #7BD156;
     border-radius: 20px;
@@ -54,8 +54,6 @@ button:hover {
 
 footer {
     background-color: #0F9FEA;
-    display: flex;
-    justify-content: space-between;
 }
 
 footer p {
@@ -147,24 +145,17 @@ footer img {
 }
 
 .container {
-    /* border: solid 1px red; */
     width: 80%;
     margin: auto;
     padding: 30px 0;
 }
 
 .div-comentarios h3 {
-    /* border: solid 1px gray; */
     color: white;
     margin-top: 0;
 }
 
-.texto { 
-    /* border: solid 1px green; */
-}
-
 .div-comentarios img {
-    /* border: solid 1px black; */
     height: 162px;
 }
 
@@ -177,7 +168,6 @@ footer img {
 .div-comentarios button {
     width: 253px;
     height: 54px;
-    font-size: 16px;
     font-weight: bold;
 }
 
@@ -202,6 +192,13 @@ footer img {
 }
 
 /* ----------------------------------------------------------------------------------------------- */
+
+.div-footer {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
 
 .div-footer-comunidade p:nth-of-type(2){
     font-style: italic;
