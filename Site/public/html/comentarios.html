@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/comentarios.css">
+    <link rel="icon" href="../assets/icon.png">
+
+    <title>Comunidade Ghibli | Página de Comentários</title>
+</head>
+
+<body>
+    <header>
+        <div class="div-img">
+            <a href="index.html"><img class=img-header src="../assets/logo.png"></a>
+        </div>
+        <div class="div-nav">
+            <ul>
+                <a href="index.html">
+                    <li>Inicial</li>
+                </a>
+                <a href="comentarios.html">
+                    <li>Compartilhe sua emoção</li>
+                </a>
+                <a href="cadastro.html">
+                    <li>Cadastro</li>
+                </a>
+                <button onclick="location.href = 'login.html'">LOGIN</button>
+            </ul>
+        </div>
+    </header>
+
+    <div class="div-secao-info">
+        <h2>Compartilhe sua história com o Studio Ghili</h2>
+        <p>
+            Selecione um filme do Studio Ghibli, escolha a emoção que melhor representa sua experiência e se conecte a
+            outras pessoas que também encontraram beleza nas histórias de Hayao Miyazaki.
+        </p>
+        <img src="../assets/spirited_away_gif.webp">
+    </div>
+    
+    <div class="div-secao-filmes">
+        <h2>Escolha um filme que deseja comentar sobre.</h2>
+        <div class="div-filmes">
+            <div class="div-filme">
+                <img src="../assets/filmes/Nausicaa.jpeg">
+                <p>Nausicaä do Vale do Vento (1984)</p>
+            </div>
+
+            <div class="div-filme">
+                <img src="../assets/filmes/Castle in the sky.jpeg">
+                <p>O Castelo no Céu (1986)</p>
+            </div>
+
+            <div class="div-filme">
+                <img src="../assets/filmes/Totoro.jpeg">
+                <p>Meu Amigo Totoro (1988)</p>
+            </div>
+
+            <div class="div-filme">
+                <img src="../assets/filmes/Hotaru no haka.jpeg">
+                <p>Túmulo dos Vagalumes (1988)</p>
+            </div>
+
+            <div class="div-filme">
+                <img src="../assets/filmes/Kiki's delivery service.jpeg">
+                <p>O Serviço de Entregas da Kiki (1989)</p>
+            </div>
+
+            <div class="div-filme">
+                <img src="../assets/filmes/Only Yesterday.jpeg">
+                <p>Memórias de Ontem (1991)</p>
+            </div>
+
+            <div class="div-filme">
+                <img src="../assets/filmes/Porco Rosso.jpeg">
+                <p>Porco Rosso: O Último Herói Romântico (1992)</p>
+            </div>
+
+            <div class="div-filme">
+                <img src="../assets/filmes/Ocean Waves.jpeg">
+                <p>Eu Posso Ouvir o Oceano (1993)</p>
+            </div>
+
+            <div class="div-filme">
+                <img src="../assets/filmes/Pom Poko.jpeg">
+                <p>PomPoko: A Grande Batalha dos Guaxinins (1994)</p>
+            </div>
+
+            <div class="div-filme">
+                <img src="../assets/filmes/Whisper.jpeg">
+                <p>Sussurros do Coração (1995)</p>
+            </div>
+
+            <div class="div-filme">
+                <img src="../assets/filmes/Mononoke.jpeg">
+                <p>Princesa Mononoke (1997)</p>
+            </div>
+
+            <div class="div-filme">
+                <img src="../assets/filmes/Spirited Away.jpeg" alt="">
+                <p>A Viagem de Chihiro (2001)</p>
+            </div>
+
+            <div class="div-filme">
+                <img src="../assets/filmes/The Cat Returns.jpeg" alt="">
+                <p>O Reino dos Gatos (2002)</p>
+            </div>
+
+            <div class="div-filme">
+                <img src="../assets/filmes/Tales From Earthsea.jpeg" alt="">
+                <p>Contos de Terramar (2006)</p>
+            </div>
+
+            <div class="div-filme">
+                <img src="../assets/filmes/Ponyo.jpeg" alt="">
+                <p>Ponyo: Uma Amizade Que Veio do Mar (2008)</p>
+            </div>
+
+            <div class="div-filme">
+                <img src="../assets/filmes/Arrietty.jpeg" alt="">
+                <p>O Mundo dos Pequeninos (2010)</p>
+            </div>
+
+            <div class="div-filme">
+                <img src="../assets/filmes/From Up on Poppy Hill.jpeg" alt="">
+                <p>Da Colina Kokuriko (2011)</p>
+            </div>
+
+            <div class="div-filme">
+                <img src="../assets/filmes/Wind.jpeg" alt="">
+                <p>Vidas ao Vento (2013)</p>
+            </div>
+
+            <div class="div-filme">
+                <img src="../assets/filmes/Kaguya.jpeg" alt="">
+                <p>O Conto da Princesa Kaguya (2013)</p>
+            </div>
+
+            <div class="div-filme">
+                <img src="../assets/filmes/As Memórias de Marnie.jpeg" alt="">
+                <p>As Memórias de Marnie (2014)</p>
+            </div>
+
+            <div class="div-filme">
+                <img src="../assets/filmes/The Boy and the Heron.jpeg" alt="">
+                <p>O Menino e a Garça (2023)</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="div-comentario">
+        <h2>Escreva sua experiência ou algo que deseje compartilhar com a comunidade!</h2>
+        <textarea id="txtComentario" maxlength="500" placeholder="Digite aqui..."></textarea>
+    </div>
+
+    <div class="div-emocao">
+        <p>Selecione a emoção que mais representa sua experiência:</p>
+        <select id="selEmocao">
+            <option value="#">Selecione...</option>
+            <option value="1">Admiração</option>
+            <option value="2">Alívio</option>
+            <option value="3">Tristeza</option>
+            <option value="4">Raiva</option>
+            <option value="5">Ansiedade</option>
+            <option value="6">Medo</option>
+            <option value="7">Alegria</option>
+            <option value="8">Excitação</option>
+            <option value="9">Calma</option>
+            <option value="10">Nostalgia</option>
+            <option value="11">Tédio</option>
+        </select>
+    </div>
+
+    <button onclick="enviarComentario()">Enviar</button>
+
+    <footer>
+        <div class="div-footer">
+            <div class="div-footer-img">
+                <a href="index.html">
+                    <img src="../assets/logo_menor.png">
+                </a>
+            </div>
+
+            <div class="div-footer-site">
+                <ul>
+                    <p><b>Site</b></p>
+                    <li><a href="index.html">Página Inicial</a></li>
+                    <li><a href="comentarios.html">Compartilhe sua emoção</a></li>
+                    <li><a href="cadastro.html">Cadastro</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+
+            <div class="div-footer-redes">
+                <ul>
+                    <p><b>Redes Sociais</b></p>
+                    <div class="div-rede">
+                        <img src="../assets/instagram-white-icon.svg">
+                        <li>
+                            <a href="https://www.instagram.com/bibi.iwss/">Instagram</a>
+                        </li>
+                    </div>
+                    <div class="div-rede">
+                        <img src="../assets/linkedin-app-white-icon.svg">
+                        <li>
+                            <a href="www.linkedin.com/in/bianca-iwata-b11248385">Linkedin</a>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+
+            <div class="div-comunidade-dev">
+                <div class="div-footer-comunidade">
+                    <p><b>Comunidade Ghibli</b></p>
+                    <p>
+                        Um espaço para compartilhar emoções e memórias inspiradas pelo Studio Ghibli.
+                    </p>
+                </div>
+                <p><b>Desenvolvido por</b> Bianca Iwata Soares da Silva</p>
+            </div>
+    </footer>
+    </div>
+</body>
+
+</html>
