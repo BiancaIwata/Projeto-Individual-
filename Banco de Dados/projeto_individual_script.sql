@@ -1,0 +1,9 @@
+CREATE DATABASE com_ghibli;
+USE com_ghibli;
+
+CREATE TABLE usuarios (
+id_usuario INT PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(200) NOT NULL,
+email VARCHAR(100) NOT NULL UNIQUE,
+senha VARCHAR(50) NOT NULL
+);
