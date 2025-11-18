@@ -8,16 +8,17 @@ body {
 }
 
 header {
+    height: 100px;
     width: 80%;
     margin: auto;
     display: flex;
     align-items: center;
     transition: 0.3s;
-    padding-top: 15px;
 }
 
 header ul {
     display: flex;
+    align-items: center;
 }
 
 ul {
@@ -103,20 +104,6 @@ footer img {
     justify-items: end;
 }
 
-.btn-login {
-    font-weight: normal;
-    color: white;
-    background-color: #7BD156;
-    border-radius: 20px;
-    transition: all 0.2s ease;
-    width: 150px;
-    height: 30px;
-}
-
-.btn-login:hover {
-    transform: scale(1.1);
-    background-color: #6AB84B;
-}
 
 /* ----------------------------------------------------------------------------------------------- */
 
