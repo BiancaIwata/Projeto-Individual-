@@ -1,5 +1,5 @@
 var ctxEmocoes = document.getElementById('graficoEmocoes');
-var ctxImpact = document.getElementById('graficoImpact');
+var ctxImpact = document.getElementById('graficoIntensidade');
 
 new Chart(document.getElementById("graficoEmocoes"), {
         type: "pie",
@@ -12,7 +12,7 @@ new Chart(document.getElementById("graficoEmocoes"), {
     });
 
 
-new Chart(document.getElementById("graficoImpacto"), {
+new Chart(document.getElementById("graficoIntensidade"), {
     type: "bar",
     data: {
         labels: ["Leve", "Médio", "Forte"],
