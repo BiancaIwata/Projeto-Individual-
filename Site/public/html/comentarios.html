@@ -24,10 +24,9 @@
                     <a href="comentarios.html">
                         <li>Compartilhe sua emoção</li>
                     </a>
-                    <a href="cadastro.html">
-                        <li>Cadastro</li>
+                    <a href="dashboard.html">
+                        <li>Dashboard</li>
                     </a>
-                    <button onclick="location.href = 'login.html'">LOGIN</button>
                 </ul>
             </div>
         </div>
@@ -51,27 +50,40 @@
         </div>
     </div>
 
-    <div class="div-comentario-emocao">
+    <div class="div-text-select">
         <div class="div-comentario">
             <h3>Escreva sua experiência ou algo que deseje compartilhar com a comunidade sobre o filme!</h3>
             <textarea id="txtComentario" placeholder="Digite aqui..."></textarea>
         </div>
 
-        <div class="div-emocao">
-            <h3>Selecione a emoção que mais representa sua experiência:</h3>
-            <select id="selEmocao">
-                <option value="#">Selecione...</option>
-                <option value="1">Admiração</option>
-                <option value="2">Alívio</option>
-                <option value="3">Tristeza</option>
-                <option value="4">Raiva</option>
-                <option value="5">Ansiedade</option>
-                <option value="6">Medo</option>
-                <option value="7">Alegria</option>
-                <option value="8">Excitação</option>
-                <option value="9">Calma</option>
-                <option value="10">Nostalgia</option>
-            </select>
+        <div class="div-selects">
+            <div class="div-emocao">
+                <h3>Selecione a emoção que mais representa sua experiência:</h3>
+                <select id="selEmocao">
+                    <option value="#">Selecione...</option>
+                    <option value="1">Admiração</option>
+                    <option value="2">Alívio</option>
+                    <option value="3">Tristeza</option>
+                    <option value="4">Raiva</option>
+                    <option value="5">Ansiedade</option>
+                    <option value="6">Medo</option>
+                    <option value="7">Alegria</option>
+                    <option value="8">Excitação</option>
+                    <option value="9">Calma</option>
+                    <option value="10">Nostalgia</option>
+                </select>
+            </div>
+
+            <div class="div-impacto">
+                <h3>Selecione qual foi o impacto que esse filme te causou:</h3>
+                <select id="selImpacto">
+                    <option value="#">Selecione...</option>
+                    <option value="1">Leve</option>
+                    <option value="2">Médio</option>
+                    <option value="3">Intenso</option>
+                    <option value="4">Muito Intenso</option>
+                </select>
+            </div>
         </div>
     </div>
     <div class="div-button">
@@ -91,6 +103,7 @@
                     <p><b>Site</b></p>
                     <li><a href="index.html">Página Inicial</a></li>
                     <li><a href="comentarios.html">Compartilhe sua emoção</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
                     <li><a href="cadastro.html">Cadastro</a></li>
                     <li><a href="login.html">Login</a></li>
                 </ul>

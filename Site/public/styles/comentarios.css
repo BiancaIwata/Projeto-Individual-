@@ -20,7 +20,7 @@ header ul {
 
 ul {
     list-style: none;
-    width: 60%;
+    width: 40%;
     justify-content: space-around;
 }
 
@@ -110,6 +110,7 @@ footer {
 
 footer p {
     color: white;
+    margin-bottom: 0;
 }
 
 footer img {
@@ -205,11 +206,12 @@ footer img {
     margin-right: 1rem;
 }
 
-.div-emocao {
+.div-emocao,
+.div-impacto {
     margin-left: 0.9rem;
 }
 
-.div-comentario-emocao {
+.div-text-select {
     box-sizing: border-box;
     display: flex;
     width: 80%;

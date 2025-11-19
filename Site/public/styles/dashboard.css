@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ovo&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Tektur:wght@400..900&display=swap');
+
+body {
+    width: 100%;
+    margin: 0px;
+    font-family:'Commissioner', sans-serif; 
+    background-color: #F7F4EF;
+}
+
+header {
+    background-color: #0F9FEA;
+    height: 100px;
+
+}
+
+header ul {
+    display: flex;
+    align-items: center;
+}
+
+ul {
+    list-style: none;
+    width: 40%;
+    justify-content: space-around;
+}
+
+li {
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h3 {
+    color: white;
+    font-size: 20px;
+}
+
+p {
+    color: white;
+}
+
+/* ----------------------------------------------------------------------------------------------- */
+
+.header-left {
+    height: 100vh;
+    width: 300px;
+    background-color: #0F9FEA;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    margin: 0;
+}
+
+.header-left li span {
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.header-left li.ativo {
+    border-right: 3px solid #7BD156;
+}
+
+.header-left li.ativo span {
+    color: #7BD156;
+    font-weight: bold;
+}
+
+
+.logo {
+    text-align: center;
+    font-size: 18px;
+    padding: 20px 0 130px 0;
+}
+
+.logo img {
+    display: block;
+    margin: 0 auto;
+    max-width: 80%;
+}
+
+
+.btn-inicial,
+.btn-dashboard,
+.btn-comentarios,
+.btn-logout {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: white;
+    padding-left: 20px;
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+
+.header-left a {
+    text-decoration: none;
+}
+
+.header-left a:hover {
+    color: #6AB84B;
+}
+
+.btn-inicial img,
+.btn-dashboard img,
+.btn-comentarios img,
+.btn-logout img {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+/* ----------------------------------------------------------------------------------------------- */
+
+.div-kpis {
+    display: flex;
+    gap: 20px;
+    width: 80%;
+    margin: 50px auto;
+}
+
+.div-kpi {
+    width: 30%;
+    background-color: #7ec1e5;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.novos img {
+    width: 90px;
+    position: absolute;
+    left: -10%;
+    top: -20%;
+}
+
+.total img {
+    width: 90px;
+    position: absolute;
+    left: 40%;
+    top: -30%;
+}
+
+.filme img {
+    width: 50px;
+    position: absolute;
+    right: -5%;
+    top: -30%;
+}
+
+/* ----------------------------------------------------------------------------------------------- */
+
+.container {
+    display: flex;
+}
+
+.div-secao-principal {
+    width: 100%;
+}
+
+/* ----------------------------------------------------------------------------------------------- */
+
+.div-graficos {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-grafico {
+    margin: 50px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.div-grafico h3 {
+    color: #0F9FEA;
+    padding: 0 14px;
+}
+
+.grafico-emocoes {
+    width: 100%;
+    text-align: center;
+}
+
+.grafico-impacto {
+    width: 500px;
+}
