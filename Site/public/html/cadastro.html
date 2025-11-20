@@ -24,16 +24,20 @@
                 <div class="div-inputs-btn">
                     <div class="div-inputs">
                         <p>Nome</p>
-                        <input id="iptNome" placeholder="Seu Nome">
+                        <input id="iptNome" placeholder="Seu Nome" onkeyup="validarNome()">
+                        <div class="div-msg-erro" id="erroNome"></div>
 
                         <p>Email</p>
-                        <input id="iptEmail" placeholder="nome@exemplo.com">
+                        <input id="iptEmail" placeholder="nome@exemplo.com" onkeyup="validarEmail()">
+                        <div class="div-msg-erro" id="erroEmail"></div>
 
                         <p>Senha</p>
-                        <input id="iptSenha" placeholder="XXXXXX">
+                        <input type="password" id="iptSenha" placeholder="XXXXXX" onkeyup="validarSenha()">
+                        <div class="div-msg-erro" id="erroSenha"></div>
 
                         <p>Confirmação de Senha</p>
-                        <input id="iptConfirmacaoSenha" placeholder="XXXXXX">
+                        <input type="password" id="iptConfirmacaoSenha" placeholder="XXXXXX" onkeyup="validarConfSenha()">
+                        <div class="div-msg-erro" id="erroConfSenha"></div>
                     </div>
                     <button onclick="cadastrar()">Cadastrar</button>
                 </div>
@@ -41,4 +45,5 @@
             </div>
         </div>
     </div>
+    <script src="../scripts/cadastro.js"></script>
 </body>

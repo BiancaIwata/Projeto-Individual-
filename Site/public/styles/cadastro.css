@@ -96,14 +96,17 @@ a {
     background-color: #F7F4EF;
 }
 
-.div-inputs {
-    width: 60%;
-}
-
 .div-saudacoes {
     text-align: center;
 }
 
 .div-saudacoes p:nth-of-type(1) {
     font-style: italic;
+}
+
+.div-msg-erro{
+  font-size: 1rem;
+  color: rgb(198, 5, 5);
+  text-align: left;
+  padding: 0px 20px 20px;
 }
