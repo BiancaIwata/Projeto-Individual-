@@ -1,15 +1,14 @@
-function entrar() {
-        var emailVar = email_input.value;
-        var senhaVar = senha_input.value;
 
-        if (emailVar == "" || senhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-            finalizarAguardar();
-            return false;
+function entrar() {
+        var emailVar = iptEmail.value;
+        var senhaVar = iptSenha.value;
+
+        if (emailVar == '' || senhaVar == '') {
+            erroEmail.innerHTML = `Preencha o campo Email`;
+            erroSenha.innerHTML = `Preencha o campo Senha`
         }
         else {
-            setInterval(sumirMensagem, 5000)
+            
         }
 
         console.log("FORM LOGIN: ", emailVar);
@@ -36,7 +35,6 @@ function entrar() {
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.id;
-                    sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
 
                     setTimeout(function () {
                         window.location = "./dashboard/cards.html";

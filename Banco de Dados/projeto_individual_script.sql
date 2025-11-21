@@ -5,7 +5,8 @@ CREATE TABLE usuarios (
 id_usuario INT PRIMARY KEY AUTO_INCREMENT,
 nome VARCHAR(200) NOT NULL,
 email VARCHAR(100) NOT NULL UNIQUE,
-senha VARCHAR(50) NOT NULL
+senha VARCHAR(50) NOT NULL,
+data_cadastro DATE NOT NULL
 );
 
 CREATE TABLE filmes (
@@ -16,10 +17,14 @@ ano_lancamento YEAR
 
 CREATE TABLE emocoes (
 id_emocao INT PRIMARY KEY AUTO_INCREMENT,
-tipo VARCHAR(45),
-intensidade VARCHAR(13)
-CONSTRAINT chkIntensidade
-	CHECK (intensidade IN ('Leve', 'Média', 'Intenso', 'Muito Intenso'))
+tipo VARCHAR(45)
+);
+
+CREATE TABLE intensidades (
+id_intensidade INT PRIMARY KEY AUTO_INCREMENT,
+nivel VARCHAR(13),
+CONSTRAINT chkNivel 
+	CHECK (nivel IN ('Leve', 'Médio', 'Intenso', 'Muito Intenso'))
 );
 
 CREATE TABLE comentarios (
@@ -30,8 +35,10 @@ PRIMARY KEY (id_comentario, id_usuario, id_filme),
 comentario TEXT,
 data_envio DATE,
 id_emocao INT,
+id_intensidade INT,
 FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario),
 FOREIGN KEY (id_filme) REFERENCES filmes(id_filme),
-FOREIGN KEY (id_emocao) REFERENCES emocoes(id_emocao)
+FOREIGN KEY (id_emocao) REFERENCES emocoes(id_emocao),
+FOREIGN KEY (id_intensidade) REFERENCES intensidades(id_intensidade)
 );
 

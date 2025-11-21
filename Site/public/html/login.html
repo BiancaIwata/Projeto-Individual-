@@ -26,14 +26,17 @@
                 </div>
                 <div class="div-inputs">
                     <p>Email</p>
-                    <input id="iptEmail" placeholder="nome@exemplo.com">
+                    <input id="iptEmail" placeholder="nome@exemplo.com" onkeyup="validarEmail()">
+                    <div class="div-msg-erro" id="erroEmail"></div>
 
                     <p>Senha</p>
-                    <input id="iptSenha" placeholder="XXXXXX">
+                    <input type="password" id="iptSenha" placeholder="XXXXXX" onkeyup="validarSenha()">
+                    <div class="div-msg-erro" id="erroSenha"></div>
                 </div>
                 <button onclick="entrar()">Entrar</button>
                 <p>Ainda não tem cadastro? <a href="cadastro.html">Cadastre-se agora!</a></p>
             </div>
         </div>
     </div>
+    <script src="../scripts/login.js"></script>
 </body>

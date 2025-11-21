@@ -126,3 +126,10 @@ a {
     margin-bottom: 0;
     color: #0F9FEA;
 }
+
+.div-msg-erro{
+  font-size: 1rem;
+  color: rgb(198, 5, 5);
+  text-align: left;
+  padding: 0px 20px 20px;
+}
