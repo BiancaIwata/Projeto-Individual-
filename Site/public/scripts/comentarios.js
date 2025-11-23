@@ -1,124 +1,156 @@
 let filmes = [
     `<div class="div-filme">
-        <img src="../assets/filmes/Nausicaa.jpeg">
+        <img src="./assets/filmes/Nausicaa.jpeg">
         <p>Nausicaä do Vale do Vento (1984)</p>
     </div>`,
 
     `<div class="div-filme">
-        <img src="../assets/filmes/Castle in the sky.jpeg">
+        <img src="./assets/filmes/Castle in the sky.jpeg">
         <p>O Castelo no Céu (1986)</p>
     </div>`,
 
     `<div class="div-filme">
-        <img src="../assets/filmes/Totoro.jpeg">
+        <img src="./assets/filmes/Totoro.jpeg">
         <p>Meu Amigo Totoro (1988)</p>
     </div>`,
 
     `<div class="div-filme">
-        <img src="../assets/filmes/Hotaru no haka.jpeg">
+        <img src="./assets/filmes/Hotaru no haka.jpeg">
         <p>Túmulo dos Vagalumes (1988)</p>
     </div>`,
 
     `<div class="div-filme">
-        <img src="../assets/filmes/Kiki's delivery service.jpeg">
+        <img src="./assets/filmes/Kiki's delivery service.jpeg">
         <p>O Serviço de Entregas da Kiki (1989)</p>
     </div>`,
 
     `<div class="div-filme">
-        <img src="../assets/filmes/Only Yesterday.jpeg">
+        <img src="./assets/filmes/Only Yesterday.jpeg">
         <p>Memórias de Ontem (1991)</p>
     </div>`,
 
     `<div class="div-filme">
-        <img src="../assets/filmes/Porco Rosso.jpeg">
+        <img src="./assets/filmes/Porco Rosso.jpeg">
         <p>Porco Rosso: O Último Herói Romântico (1992)</p>
     </div>`,
 
     `<div class="div-filme">
-        <img src="../assets/filmes/Ocean Waves.jpeg">
+        <img src="./assets/filmes/Ocean Waves.jpeg">
         <p>Eu Posso Ouvir o Oceano (1993)</p>
     </div>`,
 
     `<div class="div-filme">
-        <img src="../assets/filmes/Pom Poko.jpeg">
+        <img src="./assets/filmes/Pom Poko.jpeg">
         <p>PomPoko: A Grande Batalha dos Guaxinins (1994)</p>
     </div>`,
 
     `<div class="div-filme">
-        <img src="../assets/filmes/Whisper.jpeg">
+        <img src="./assets/filmes/Whisper.jpeg">
         <p>Sussurros do Coração (1995)</p>
     </div>`,
 
     `<div class="div-filme">
-        <img src="../assets/filmes/Mononoke.jpeg">
+        <img src="./assets/filmes/Mononoke.jpeg">
         <p>Princesa Mononoke (1997)</p>
     </div>`,
 
     `<div class="div-filme">
-        <img src="../assets/filmes/Spirited Away.jpeg">
+        <img src="./assets/filmes/Spirited Away.jpeg">
         <p>A Viagem de Chihiro (2001)</p>
     </div>`,
 
     `<div class="div-filme">
-        <img src="../assets/filmes/The Cat Returns.jpeg">
+        <img src="./assets/filmes/The Cat Returns.jpeg">
         <p>O Reino dos Gatos (2002)</p>
     </div>`,
 
     `<div class="div-filme">
-        <img src="../assets/filmes/Howl's Moving Castle.jpeg">
+        <img src="./assets/filmes/Howl's Moving Castle.jpeg">
         <p>O Castelo Animado (2004)</p>
     </div>`,
 
     `<div class="div-filme">
-        <img src="../assets/filmes/Tales From Earthsea.jpeg>
+        <img src="./assets/filmes/Tales From Earthsea.jpeg>
         <p>Contos de Terramar (2006)</p>
     </div>`,
 
     `<div class="div-filme">
-        <img src="../assets/filmes/Ponyo.jpeg">
+        <img src="./assets/filmes/Ponyo.jpeg">
         <p>Ponyo: Uma Amizade Que Veio do Mar (2008)</p>
     </div>`,
 
     `<div class="div-filme">
-        <img src="../assets/filmes/Arrietty.jpeg">
+        <img src="./assets/filmes/Arrietty.jpeg">
         <p>O Mundo dos Pequeninos (2010)</p>
     </div>`,
 
     `<div class="div-filme">
-        <img src="../assets/filmes/From Up on Poppy Hill.jpeg">
+        <img src="./assets/filmes/From Up on Poppy Hill.jpeg">
         <p>Da Colina Kokuriko (2011)</p>
     </div>`,
 
     `<div class="div-filme">
-        <img src="../assets/filmes/Wind.jpeg">
+        <img src="./assets/filmes/Wind.jpeg">
         <p>Vidas ao Vento (2013)</p>
     </div>`,
 
     `<div class="div-filme">
-        <img src="../assets/filmes/Kaguya.jpeg">
+        <img src="./assets/filmes/Kaguya.jpeg">
         <p>O Conto da Princesa Kaguya (2013)</p>
     </div>`,
 
     `<div class="div-filme">
-        <img src="../assets/filmes/As Memórias de Marnie.jpeg>
+        <img src="./assets/filmes/As Memórias de Marnie.jpeg>
         <p>As Memórias de Marnie (2014)</p>
     </div>`,
 
     `<div class="div-filme">
-        <img src="../assets/filmes/The Boy and the Heron.jpeg">
+        <img src="./assets/filmes/The Boy and the Heron.jpeg">
         <p>O Menino e a Garça (2023)</p>
     </div>`
 ]
 
 let filmePorPagina = 4; 
-let qtdPaginas = filmes.length / filmePorPagina;
+let qtdPaginas = (filmes.length / filmePorPagina).toFixed();
 
-let divFilmes = document.getElementById("div_filmes")
 
-for (let index = 0; index < filmePorPagina; index++) {
+let divPaginacao = document.getElementById("div_paginacao");
+
+for (let index = 0; index < qtdPaginas; index++) {
+    let paginacao = document.createElement("div");
+    paginacao.innerHTML = index + 1;
+    divPaginacao.appendChild(paginacao);
+
+    if (paginacao.innerHTML == 1) {
+        paginacao.classList.add("destaque-paginacao");
+    }
+
+    paginacao.setAttribute("onclick", `trocarPaginaSelecionada(${index + 1}, this)`);
+}
+
+let divFilmes = document.getElementById("div_filmes");
+
+let paginaAtual = 1;
+let indexInicial = (paginaAtual - 1) * filmePorPagina;
+let indexFinal = indexInicial + filmePorPagina;
+
+for (let index = indexInicial; index < indexFinal; index++) {
     let filme = filmes[index];
     
     divFilmes.innerHTML += filme;
+}
+ 
+
+// for (let index = 0; index < filmePorPagina; index++) {
+    
+// }
+
+function trocarPaginaSelecionada(paginaSelecionada, elemento) {    
+    for (let index = 0; index < divPaginacao.childNodes.length; index++) {
+        divPaginacao.childNodes[index].classList.remove("destaque-paginacao")
+    }
+    
+    elemento.classList.add("destaque-paginacao");
 }
 
 function enviarComentario() {
