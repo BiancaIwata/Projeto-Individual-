@@ -51,9 +51,7 @@ function buscarEmocoes(req, res) {
 function buscarIntensidades(req, res) {
   comentariosModel.buscarIntensidades().then(function (resultado) {
   if (resultado.length > 0) {
-      res.status(200).json({
-      nivel: resultado[0].nivel,
-      qtd: resultado[0].qtd});
+      res.status(200).json(resultado)
   } else {
       res.status(204).send("Nenhum resultado encontrado!")
   }
