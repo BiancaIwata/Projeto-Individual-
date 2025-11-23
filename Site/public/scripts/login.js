@@ -7,10 +7,7 @@ function entrar() {
             erroEmail.innerHTML = `Preencha o campo Email`;
             erroSenha.innerHTML = `Preencha o campo Senha`
         }
-        else {
-            
-        }
-
+        
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
 
@@ -34,22 +31,19 @@ function entrar() {
                     console.log(JSON.stringify(json));
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.ID_USUARIO = json.id_usuario;
 
                     setTimeout(function () {
-                        window.location = "./dashboard/cards.html";
+                        window.location = "comentarios.html";
                     }, 1000); // apenas para exibir o loading
 
                 });
 
             } else {
 
-                console.log("Houve um erro ao tentar realizar o login!");
+                console.log("Houve um erro ao tentar realizar o login!");;
 
-                resposta.text().then(texto => {
-                    console.error(texto);
-                    finalizarAguardar(texto);
-                });
+                erro.innerHTML = `Email ou senha inválidos.`
             }
 
         }).catch(function (erro) {
@@ -59,6 +53,3 @@ function entrar() {
         return false;
     }
 
-    function sumirMensagem() {
-        cardErro.style.display = "none"
-    }

@@ -55,7 +55,7 @@ function validarSenha() {
     // verificação para ver se tem numero
     else if (!temNumero) {
         erro = 'A senha deve conter pelo menos um número!';
-    } 
+    }
     // Verificação letra maiscula
     else if (!temMaiuscula) {
         erro = 'A senha deve conter pelo menos uma letra maiúscula!';
@@ -84,7 +84,7 @@ function validarNome() {
 
     if (nome == '') {
         erro = `Preencha o campo Nome`;
-    //verifica se tem no minimo 6 caracteres
+        //verifica se tem no minimo 6 caracteres
     } else if (nome.length < 6) {
         erro = `Insira seu nome completo`
     }
@@ -104,7 +104,7 @@ function validarConfSenha() {
 
     if (senhaConf == '') {
         erro = `Preencha o campo Confirmação de Senha`;
-    }else if (senha != senhaConf) {
+    } else if (senha != senhaConf) {
         erro = 'As senhas digitadas são diferentes. Por favor, verifique e tente novamente.'
     }
 
@@ -117,21 +117,51 @@ function validarConfSenha() {
     }
 }
 
-function cadastrar(){
+function cadastrar() {
     validarNome();
     validarEmail();
     validarSenha();
     validarConfSenha();
 
 
-    const temErro = chkNome && chkEmail && chkSenha && chkConfSenha;
+    const chkErro = chkNome && chkEmail && chkSenha && chkConfSenha;
 
-    if (!temErro) {
+    if (!chkErro) {
         alert('Verifique se todos os campos estão preenchidos!');
         return false;
-    } else {
-        alert('Cadastrado com sucesso!');
-        window.location.href = "login.html";
     }
 
+    var nomeVar = iptNome.value;
+    var emailVar = iptEmail.value;
+    var senhaVar = iptSenha.value;
+
+    fetch("/usuarios/cadastrar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            // crie um atributo que recebe o valor recuperado aqui
+            // Agora vá para o arquivo routes/usuario.js
+            nomeServer: nomeVar,
+            emailServer: emailVar,
+            senhaServer: senhaVar,
+        }),
+    })
+        .then(function (resposta) {
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                alert('Cadastrado com sucesso!');
+
+                window.location.href = "login.html";
+            } else {
+                throw "Houve um erro ao tentar realizar o cadastro!";
+            }
+        })
+        .catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+    return false;
 }

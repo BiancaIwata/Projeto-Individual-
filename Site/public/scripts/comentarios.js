@@ -120,3 +120,43 @@ for (let index = 0; index < filmePorPagina; index++) {
     
     divFilmes.innerHTML += filme;
 }
+
+function enviarComentario() {
+    if (txtComentario.value == '' || selEmocao.value == '#' || selImpacto.value == '#') {
+        alert('Verifique se todos os campos estão preenchidos e selecionados!');
+        return false;
+    }
+
+    var filmeVar
+    var comentarioVar = txtComentario.value;
+    var emocaoVar = selEmocao.value;
+    var intensidadeVar = selImpacto.value;
+
+    fetch("/usuarios/cadastrar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            filmeServer: filmeVar,
+            comentarioServer: comentarioVar,
+            emocaoServer: emocaoVar,
+            intensidadeServer: intensidadeVar,
+        }),
+    })
+        .then(function (resposta) {
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                alert('Envio realizado com sucesso!');
+
+            } else {
+                throw "Houve um erro ao tentar realizar o cadastro!";
+            }
+        })
+        .catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+    return false;
+}
