@@ -327,3 +327,8 @@ footer img {
     background-color: #0F9FEA;
     color: #FFFFFF;
 }
+
+.destaque-filme {
+    transform: scale(1.15);
+    transition: all 0.2s ease;
+}

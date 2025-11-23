@@ -10,7 +10,7 @@
     <title>Comunidade Ghibli | Dashboard</title>
 </head>
 
-<body>
+<body onload="validarSessao(), obterDadosGrafico()">
     <div class="container">
         <ul class="header-left">
             <li class="logo">
@@ -83,4 +83,5 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script
     src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@2.1.0/dist/chartjs-plugin-annotation.min.js"></script>
-<script src="../scripts/dashboard.js"></script>
+<script src="./scripts/dashboard.js"></script>
+<script src="./scripts/sessao.js"></script>

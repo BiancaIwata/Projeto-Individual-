@@ -40,7 +40,6 @@ function entrar() {
                 });
 
             } else {
-
                 console.log("Houve um erro ao tentar realizar o login!");;
 
                 erro.innerHTML = `Email ou senha inválidos.`
