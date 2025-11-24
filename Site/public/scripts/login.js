@@ -32,10 +32,12 @@ function entrar() {
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.id_usuario;
+                    
+                    loading_gif.style.display = "block";
 
                     setTimeout(function () {
                         window.location = "comentarios.html";
-                    }, 1000); // apenas para exibir o loading
+                    }, 1500); // apenas para exibir o loading
 
                 });
 

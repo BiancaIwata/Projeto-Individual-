@@ -136,7 +136,18 @@ a {
 
 /* ----------------------------------------------------------------------------------------------- */
 
-.div-loading img {
+.div-inputs {
+    position: relative;
+}
+
+.img-loading {
+    display: none;
     position: absolute;
-    width: 15%;
+    width: 50%;
+    top: -25%;
+    left: 24%;
+}
+
+.creditos {
+    text-align: center;
 }
