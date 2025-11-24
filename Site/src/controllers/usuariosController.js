@@ -74,7 +74,37 @@ function cadastrar(req, res) {
     }
 }
 
+function buscarUsuariosDoDia(req, res) {
+    usuariosModel.buscarUsuariosDoDia().then(function (resultado) {
+    if (resultado.length > 0) {
+        res.status(200).json(resultado[0])
+    } else {
+        res.status(204).send("Nenhum resultado encontrado!")
+    }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar os usuários do dia.", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
+function buscarUsuariosTotal(req, res) {
+    usuariosModel.buscarUsuariosTotal().then(function (resultado) {
+    if (resultado.length > 0) {
+        res.status(200).json(resultado[0])
+    } else {
+        res.status(204).send("Nenhum resultado encontrado!")
+    }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar os usuários.", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    buscarUsuariosDoDia,
+    buscarUsuariosTotal
 }

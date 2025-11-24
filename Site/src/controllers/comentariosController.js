@@ -62,8 +62,23 @@ function buscarIntensidades(req, res) {
   });
 }
 
+function buscarFilmeMaisComentado(req, res) {
+  comentariosModel.buscarFilmeMaisComentado().then(function (resultado) {
+  if (resultado.length > 0) {
+      res.status(200).json(resultado[0])
+  } else {
+      res.status(204).send("Nenhum resultado encontrado!")
+  }
+  }).catch(function (erro) {
+      console.log(erro);
+      console.log("Houve um erro ao buscar filme.", erro.sqlMessage);
+      res.status(500).json(erro.sqlMessage);
+  });
+}
+
 module.exports = {
   enviar,
   buscarEmocoes,
-  buscarIntensidades
+  buscarIntensidades,
+  buscarFilmeMaisComentado
 }

@@ -1,5 +1,3 @@
-var ctxEmocoes = document.getElementById('graficoEmocoes');
-var ctxImpact = document.getElementById('graficoIntensidade');
 
 function obterDadosGrafico() {
     buscarDadosEmocoes();
@@ -95,4 +93,55 @@ function plotarGraficoIntensidades(resultado) {
 
     let graficoIntensidades = new Chart(document.getElementById("graficoIntensidade"), config);
 
+}
+
+function obterDadosKPIs() {
+    buscarUsuariosDoDia();
+    buscarUsuariosTotal();
+    buscarFilmeMaisComentado();
+}
+
+function buscarUsuariosDoDia() {
+    fetch(`/usuarios/buscarUsuariosDoDia`, { cache: 'no-store' }).then(function (response) {
+        if (response.ok) {
+            response.json().then(resultado => {
+                console.log(resultado)
+                kpiUsuariosDoDia.innerHTML = resultado.usuarios_dia;
+            });
+        } else {
+            console.error('Nenhum dado encontrado ou erro na API');
+        }
+    }).catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+    });
+}
+
+function buscarUsuariosTotal() {
+    fetch(`/usuarios/buscarUsuariosTotal`, { cache: 'no-store' }).then(function (response) {
+        if (response.ok) {
+            response.json().then(resultado => {
+                console.log(resultado)
+                kpiUsuariosTotal.innerHTML = resultado.total_usuarios;
+            });
+        } else {
+            console.error('Nenhum dado encontrado ou erro na API');
+        }
+    }).catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+    })
+}
+
+function buscarFilmeMaisComentado() {
+    fetch(`/comentarios/buscarFilmeMaisComentado`, { cache: 'no-store' }).then(function (response) {
+        if (response.ok) {
+            response.json().then(resultado => {
+                console.log(resultado)
+                kpiFilme.innerHTML = resultado.filme;
+            });
+        } else {
+            console.error('Nenhum dado encontrado ou erro na API');
+        }
+    }).catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+    })
 }

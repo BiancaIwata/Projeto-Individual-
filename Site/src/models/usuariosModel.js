@@ -22,7 +22,25 @@ function cadastrar(nome, email, senha) {
     return database.executar(instrucaoSql);
 }
 
+function buscarUsuariosDoDia() {
+    var instrucaoSql = `
+        SELECT COUNT(id_usuario) AS usuarios_dia FROM usuarios WHERE data_cadastro = CURDATE();
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function buscarUsuariosTotal() {
+    var instrucaoSql = `
+        SELECT COUNT(id_usuario) AS total_usuarios FROM usuarios;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    buscarUsuariosDoDia,
+    buscarUsuariosTotal
 };

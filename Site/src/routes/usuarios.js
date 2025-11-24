@@ -12,4 +12,12 @@ router.post("/autenticar", function (req, res) {
     usuariosController.autenticar(req, res);
 });
 
+router.get("/buscarUsuariosDoDia", function (req, res) {
+    usuariosController.buscarUsuariosDoDia(req, res);
+});
+
+router.get("/buscarUsuariosTotal", function (req, res) {
+    usuariosController.buscarUsuariosTotal(req, res);
+});
+
 module.exports = router;

@@ -11,6 +11,10 @@ router.get("/buscarIntensidades", function (req, res) {
   comentariosController.buscarIntensidades(req, res);
 });
 
+router.get("/buscarFilmeMaisComentado", function (req, res) {
+  comentariosController.buscarFilmeMaisComentado(req, res);
+});
+
 router.post("/enviar", function (req, res) {
   comentariosController.enviar(req, res);
 })
