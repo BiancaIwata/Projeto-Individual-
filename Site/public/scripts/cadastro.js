@@ -3,14 +3,19 @@ var chkEmail = false;
 var chkSenha = false;
 var chkConfSenha = false;
 
+var nome = '';
+var email = '';
+var senha = '';
+var confSenha = '';
+
 function validarEmail() {
-    email = iptEmail.value.trim();
+    email = iptEmail.value;
     let erro = '';
 
-    if (email == '') {
-        erro = `Preencha o campo Email`;
-    } else if (email.indexOf('@') == -1 || email.indexOf('.') == -1) {
+    if (email.indexOf('@') == -1 || email.indexOf('.') == -1) {
         erro = `Insira um email válido que contenha @ e .`;
+    } else if (email.length < 8) {
+        erro = `Insira um email válido.`
     }
 
     if (erro != '') {
@@ -24,7 +29,7 @@ function validarEmail() {
 
 function validarSenha() {
     // Verificação se senha possui letra maiúscula e número
-    var senha = iptSenha.value.trim();
+    senha = iptSenha.value.trim();
     var temMaiuscula = false;
     var temNumero = false;
 
@@ -49,27 +54,21 @@ function validarSenha() {
     //validações         
     let erro = '';
 
-    if (senha == '') {
-        erro = `Preencha o campo Senha`;
-    }
-    // verificação para ver se tem numero
-    else if (!temNumero) {
-        erro = 'A senha deve conter pelo menos um número!';
-    }
-    // Verificação letra maiscula
-    else if (!temMaiuscula) {
-        erro = 'A senha deve conter pelo menos uma letra maiúscula!';
-    }
-    //Verificação de caractere especial
-    else if (senha.indexOf('!') == -1 && senha.indexOf('@') == -1 && senha.indexOf('#') == -1 && senha.indexOf('$') == -1 && senha.indexOf('%') == -1 && senha.indexOf('&') == -1) {
-        erro = 'A senha deve conter pelo menos um caractere especial (!, @, #, $, %, &)';
-    }
     //verifica se tem no minimo 8 caracteres
-    else if (senha.length < 8) {
-        erro = 'A senha deve ter pelo menos 8 caracteres!'
+    if (senha.length < 8) {
+        erro = 'A senha deve ter pelo menos 8 caracteres.'
+        // verificação para ver se tem numero
+    } else if (!temNumero) {
+        erro = 'A senha deve conter pelo menos um número.';
+        // Verificação letra maiscula
+    } else if (!temMaiuscula) {
+        erro = 'A senha deve conter pelo menos uma letra maiúscula.';
+        //Verificação de caractere especial
+    } else if (senha.indexOf('!') == -1 && senha.indexOf('@') == -1 && senha.indexOf('#') == -1 && senha.indexOf('$') == -1 && senha.indexOf('&') == -1) {
+        erro = 'A senha deve conter pelo menos um caractere especial (!, @, #, $, &).';
     }
 
-    if (erro != "") {
+    if (erro != '') {
         erroSenha.innerHTML = `${erro}`;
         chkSenha = false;
     } else {
@@ -82,10 +81,7 @@ function validarNome() {
     nome = iptNome.value.trim();
     let erro = '';
 
-    if (nome == '') {
-        erro = `Preencha o campo Nome`;
-        //verifica se tem no minimo 6 caracteres
-    } else if (nome.length < 6) {
+    if (nome.length < 6) {
         erro = `Insira seu nome completo`
     }
 
@@ -97,39 +93,41 @@ function validarNome() {
         chkNome = true;
     }
 }
-function validarConfSenha() {
-    senha = iptSenha.value.trim();
-    senhaConf = iptConfirmacaoSenha.value.trim();
-    let erro = '';
-
-    if (senhaConf == '') {
-        erro = `Preencha o campo Confirmação de Senha`;
-    } else if (senha != senhaConf) {
-        erro = 'As senhas digitadas são diferentes. Por favor, verifique e tente novamente.'
-    }
-
-    if (erro != '') {
-        erroConfSenha.innerHTML = `${erro}`;
-        chkConfSenha = false;
-    } else {
-        erroConfSenha.innerHTML = ``;
-        chkConfSenha = true;
-    }
-}
 
 function cadastrar() {
     validarNome();
     validarEmail();
     validarSenha();
-    validarConfSenha();
 
+    confSenha = iptConfirmacaoSenha.value.trim();
+    const chkErro = chkNome && chkEmail && chkSenha;
 
-    const chkErro = chkNome && chkEmail && chkSenha && chkConfSenha;
 
     if (!chkErro) {
-        alert('Verifique se todos os campos estão preenchidos!');
+        alert('Verifique se todos os campos estão preenchidos corretamente!');
         return false;
     }
+    if (email == '') {
+    erroEmail.innerHTML = `Preencha o campo Email`;
+    return false;
+    }
+    if (senha == '') {
+        erroSenha.innerHTML = `Preencha o campo Senha`;
+        return false;
+    }
+    if (nome == '') {
+        erroNome.innerHTML = `Preencha o campo Nome`;
+        return false;
+
+    }
+    if (confSenha == '') {
+        erroConfSenha.innerHTML = `Preencha o campo Confirmação de Senha`;
+        return false;
+    } else if (senha != confSenha) {
+        erroConfSenha.innerHTML = 'As senhas digitadas são diferentes. Por favor, verifique e tente novamente.'
+        return false;
+    }
+    
 
     var nomeVar = iptNome.value;
     var emailVar = iptEmail.value;

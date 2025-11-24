@@ -6,7 +6,7 @@ id_usuario INT PRIMARY KEY AUTO_INCREMENT,
 nome VARCHAR(200) NOT NULL,
 email VARCHAR(100) NOT NULL UNIQUE,
 senha VARCHAR(50) NOT NULL,
-data_cadastro DATE NOT NULL
+data_cadastro DATE DEFAULT (CURDATE())
 );
 
 CREATE TABLE filmes (
@@ -42,7 +42,7 @@ FOREIGN KEY (id_emocao) REFERENCES emocoes(id_emocao),
 FOREIGN KEY (id_intensidade) REFERENCES intensidades(id_intensidade)
 );
 
--- INSERTS 
+-- INSERTS --
 
 INSERT INTO filmes (nome, ano_lancamento) VALUES 
 	('Nausicaä do Vale do Vento', '1984'),
