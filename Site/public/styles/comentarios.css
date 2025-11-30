@@ -300,6 +300,10 @@ footer img {
     margin: 0;
 }
 
+.creditos {
+    margin-top: 70px;
+}
+
 .div-paginacao {
     display: flex;
     justify-content: center;
