@@ -21,7 +21,7 @@ A plataforma permite que os usuários compartilhem as lições e sentimentos que
 
 # Funcionalidades
 - Login e cadastro: Faça o login e cadastro na plataforma e interaja com a comunidade.
-- Seção de comentários: Os usuários podem deixar comentários e reflexões sobre os filmes de sua escolha, assim como a emoção sentida ao assistir.
+- Seção de comentários: Os usuários podem deixar comentários e reflexões sobre os filmes de sua escolha, assim como a emoção sentida e a intensidade dela ao assistir.
 - Dashboard: Usuários logados conseguem visualizar informações relevantes sobre a plataforma, como total de usuários que fazem parte da comunidade, gráficos sobre emoções sentidas e intensidades, total de usuários novos do dia e filme mais comentado.
 
 # Tecnologias utilizadas
@@ -54,7 +54,7 @@ DB_PASSWORD='senha-do-banco'
 DB_PORT='3306' # Porta do MySQL local. Esse projeto foi criado utilizando uma VM como banco de dados, por isso por padrão a porta utilizada é 3307.
 
 # Inicie o servidor
-npm run
+npm start
 ```
 
 Após executar os comandos, você conseguirá navegar na plataforma através da URL `http://localhost:8080`
