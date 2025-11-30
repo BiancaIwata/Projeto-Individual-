@@ -198,6 +198,27 @@ footer img {
     font-size: 18px;
 }
 
+.div-img-sobre-mim {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    width: 40%;
+    height: 80%;
+}
+
+.div-img-sobre-mim img {
+    width: 80%;
+    height: 85%;
+    border-radius: 30px;
+}
+
+.div-img-sobre-mim p {
+    font-size: 16px;
+    text-align: center;
+    font-style: italic;
+    width: 90%;
+}
+
 /* ----------------------------------------------------------------------------------------------- */
 
 .div-footer-img {
