@@ -169,9 +169,12 @@ footer img {
 
 /* ----------------------------------------------------------------------------------------------- */
 
-.div-filmes {
+.div-filmes-preferidos {
     width: 80%;
     margin: 30px auto;
+}
+
+.div-filmes {
     display: flex;
     justify-content: space-between;
 }
@@ -182,6 +185,32 @@ footer img {
 
 .filme p {
     text-align: center;
+}
+
+.div-img-filme {
+    position: relative; 
+}
+
+.texto-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 93.5%;
+    height: 95%;
+    background: rgba(0, 0, 0, 0.5); 
+    color: #fff;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    border-radius: 30px;
+    transition: 0.3s ease; 
+}
+
+.div-img-filme:hover .texto-hover {
+    opacity: 1; 
 }
 
 /* ----------------------------------------------------------------------------------------------- */
