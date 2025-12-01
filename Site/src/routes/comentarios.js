@@ -15,6 +15,10 @@ router.get("/buscarFilmeMaisComentado", function (req, res) {
   comentariosController.buscarFilmeMaisComentado(req, res);
 });
 
+router.get("/buscarEmocaoMaisComentada", function (req, res) {
+    comentariosController.buscarEmocaoMaisComentada(req, res);
+});
+
 router.post("/enviar", function (req, res) {
   comentariosController.enviar(req, res);
 })

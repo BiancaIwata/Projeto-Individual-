@@ -41,9 +41,9 @@ function plotarGraficoEmocoes(resultado) {
     }
 
     const config = {
-            type: 'pie',
-            data: dados,
-        };
+        type: 'pie',
+        data: dados,
+    };
 
     let graficoEmocoes = new Chart(document.getElementById("graficoEmocoes"), config);
 
@@ -89,24 +89,39 @@ function plotarGraficoIntensidades(resultado) {
     const config = {
         type: 'bar',
         data: dados,
-    };
+        options: {
+            indexAxis: 'y',
+            elements: {
+                bar: {
+                    borderWidth: 2,
+                }
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        stepSize: 1
+                    }
+                }
+            }
+        }
+    }
 
     let graficoIntensidades = new Chart(document.getElementById("graficoIntensidade"), config);
 
 }
 
 function obterDadosKPIs() {
-    buscarUsuariosDoDia();
+    buscarEmocaoMaisComentada();
     buscarUsuariosTotal();
     buscarFilmeMaisComentado();
 }
 
-function buscarUsuariosDoDia() {
-    fetch(`/usuarios/buscarUsuariosDoDia`, { cache: 'no-store' }).then(function (response) {
+function buscarEmocaoMaisComentada() {
+    fetch(`/comentarios/buscarEmocaoMaisComentada`, { cache: 'no-store' }).then(function (response) {
         if (response.ok) {
             response.json().then(resultado => {
                 console.log(resultado)
-                kpiUsuariosDoDia.innerHTML = resultado.usuarios_dia;
+                kpiEmocaoMaisComentada.innerHTML = resultado.emocao;
             });
         } else {
             console.error('Nenhum dado encontrado ou erro na API');

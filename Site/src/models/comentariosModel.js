@@ -27,6 +27,14 @@ function buscarFilmeMaisComentado() {
   return database.executar(instrucaoSql);
 }
 
+function buscarEmocaoMaisComentada() {
+    var instrucaoSql = `
+        SELECT e.tipo AS emocao FROM comentarios c JOIN emocoes e ON e.id_emocao = c.id_emocao GROUP BY e.tipo ORDER BY COUNT(e.id_emocao) DESC LIMIT 1;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 function enviar(usuario, filme, comentario, emocao, intensidade) {
   
   var instrucaoSql = `INSERT INTO comentarios (id_usuario, id_filme, comentario, id_emocao, id_intensidade) VALUES (${usuario}, ${filme}, '${comentario}', ${emocao}, ${intensidade})`;
@@ -40,5 +48,6 @@ module.exports = {
   enviar,
   buscarEmocoes,
   buscarIntensidades,
-  buscarFilmeMaisComentado
+  buscarFilmeMaisComentado,
+  buscarEmocaoMaisComentada
 }
