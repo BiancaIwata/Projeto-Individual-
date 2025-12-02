@@ -3,7 +3,7 @@ var database = require("../database/config");
 function buscarEmocoes() {
 
   var instrucaoSql = 
-  `SELECT e.tipo AS tipo, COUNT(c.id_emocao) AS total FROM comentarios c JOIN emocoes e ON e.id_emocao = c.id_emocao GROUP BY e.tipo;`;
+  `SELECT tipo, total FROM view_quantidade_emocoes`;
 
   console.log("Executando a instrução SQL: \n" + instrucaoSql);
   return database.executar(instrucaoSql);
@@ -12,7 +12,7 @@ function buscarEmocoes() {
 function buscarIntensidades() {
 
   var instrucaoSql = 
-  `SELECT i.nivel AS nivel, COUNT(c.id_intensidade) AS qtd FROM comentarios c JOIN intensidades i ON i.id_intensidade = c.id_intensidade GROUP BY i.nivel;`;
+  `SELECT nivel, qtd FROM view_quantidade_intensidades`;
 
   console.log("Executando a instrução SQL: \n" + instrucaoSql);
   return database.executar(instrucaoSql);
@@ -21,16 +21,15 @@ function buscarIntensidades() {
 function buscarFilmeMaisComentado() {
 
   var instrucaoSql = 
-  `SELECT f.nome AS filme FROM comentarios c JOIN filmes f ON f.id_filme = c.id_filme GROUP BY f.nome ORDER BY COUNT(f.id_filme) DESC`;
+  `SELECT filme FROM view_filme_mais_comentado`;
 
   console.log("Executando a instrução SQL: \n" + instrucaoSql);
   return database.executar(instrucaoSql);
 }
 
 function buscarEmocaoMaisComentada() {
-    var instrucaoSql = `
-        SELECT e.tipo AS emocao FROM comentarios c JOIN emocoes e ON e.id_emocao = c.id_emocao GROUP BY e.tipo ORDER BY COUNT(e.id_emocao) DESC LIMIT 1;
-    `;
+    var instrucaoSql = 
+    `SELECT emocao FROM view_emocao_mais_comentada;`;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }

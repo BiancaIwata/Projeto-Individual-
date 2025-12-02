@@ -37,6 +37,13 @@ a:hover {
     text-decoration: underline;
 }
 
+h2 {
+    color: #0F9FEA;
+    font-size: 30px;
+    margin-bottom: 0;
+    margin-left: 5%;
+}
+
 h3 {
     color: white;
     font-size: 20px;
@@ -176,7 +183,7 @@ p {
 }
 
 .div-grafico {
-    margin: 50px;
+    margin: 0 50px;
     background-color: white;
     border-radius: 20px;
     display: flex;
@@ -188,10 +195,11 @@ p {
 .div-grafico h3 {
     color: #0F9FEA;
     padding: 0 14px;
+    text-align: center;
 }
 
 .grafico-emocoes {
-    width: 100%;
+    width: 80%;
     text-align: center;
 }
 

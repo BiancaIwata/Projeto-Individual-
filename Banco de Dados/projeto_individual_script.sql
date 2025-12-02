@@ -85,6 +85,13 @@ INSERT INTO intensidades (nivel) VALUES
 	('Médio'),
 	('Intenso'),
 	('Muito Intenso');
+
+CREATE VIEW view_comentarios_por_usuario AS 
+SELECT u.id_usuario,
+COUNT(c.id_comentario) AS qtd_comentarios
+FROM comentarios c
+JOIN usuarios u ON u.id_usuario = c.id_usuario
+GROUP BY u.id_usuario;
     
     
 CREATE VIEW view_filme_mais_comentado AS 
@@ -105,3 +112,17 @@ JOIN emocoes e ON e.id_emocao = c.id_emocao
 GROUP BY e.tipo 
 ORDER BY COUNT(e.id_emocao) DESC
 LIMIT 1;
+
+CREATE VIEW view_quantidade_intensidades AS 
+SELECT i.nivel AS nivel, 
+COUNT(c.id_intensidade) AS qtd 
+FROM comentarios c 
+JOIN intensidades i ON i.id_intensidade = c.id_intensidade 
+GROUP BY i.nivel;
+
+CREATE VIEW view_quantidade_emocoes AS
+SELECT e.tipo AS tipo, 
+COUNT(c.id_emocao) AS total 
+FROM comentarios c 
+JOIN emocoes e ON e.id_emocao = c.id_emocao 
+GROUP BY e.tipo;

@@ -24,7 +24,7 @@ function cadastrar(nome, email, senha) {
 
 function buscarUsuariosTotal() {
     var instrucaoSql = `
-        SELECT COUNT(id_usuario) AS total_usuarios FROM usuarios;
+        SELECT total_usuarios FROM view_usuarios_total;
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
