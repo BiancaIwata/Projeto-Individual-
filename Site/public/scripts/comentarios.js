@@ -1,3 +1,4 @@
+// array para armazenar os filmes disponíveis
 let filmes = [
     `<div class="div-filme" onclick="selecionarFilme(1, this)">
         <img src="./assets/filmes/Nausicaa.jpeg">
@@ -110,26 +111,31 @@ let filmes = [
     </div>`
 ]
 
+// variáveis para armazenar quantaos filmes terão em cada página 
+// e cálculo para quantidade de páginas
 let filmePorPagina = 4;
 let qtdPaginas = (filmes.length / filmePorPagina).toFixed();
 
 
 let divPaginacao = document.getElementById("div_paginacao");
 
+// for para colocar paginação dos filmes 
 for (let index = 0; index < qtdPaginas; index++) {
     let paginacao = document.createElement("div");
     paginacao.innerHTML = index + 1;
-    divPaginacao.appendChild(paginacao);
+    divPaginacao.appendChild(paginacao); // inserindo div de cada página na div pai
 
     if (paginacao.innerHTML == 1) {
         paginacao.classList.add("destaque-paginacao");
     }
 
+    // atribuindo função onclick em cada elemento
     paginacao.setAttribute("onclick", `trocarPaginaSelecionada(${index + 1}, this)`);
 }
 
 let divFilmes = document.getElementById("div_filmes");
 
+// for para inserir filmes no HTML (ocorre quando a página é carregada)
 for (let index = 0; index < filmePorPagina; index++) {
     let filme = filmes[index];
 
@@ -138,6 +144,7 @@ for (let index = 0; index < filmePorPagina; index++) {
 
 
 function trocarPaginaSelecionada(paginaSelecionada, elemento) {
+    // tirando destaque de todos elementos e adicionando apenas no selecionado
     for (let index = 0; index < divPaginacao.childNodes.length; index++) {
         divPaginacao.childNodes[index].classList.remove("destaque-paginacao")
     }
@@ -149,6 +156,7 @@ function trocarPaginaSelecionada(paginaSelecionada, elemento) {
 
     divFilmes.innerHTML = '';
 
+    // inserindo filmes em cada página conforme filmePorPagina
     for (let index = indexInicial; (index < indexFinal && index < filmes.length); index++) {
         let filme = filmes[index];
         divFilmes.innerHTML += filme;
@@ -157,6 +165,7 @@ function trocarPaginaSelecionada(paginaSelecionada, elemento) {
 
 let filme = 0;
 
+// armazenando filme selecionado e adicionando destaque 
 function selecionarFilme(idFilme, elemento) {
     filme = idFilme;
 
